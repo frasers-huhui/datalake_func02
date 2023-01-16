@@ -1,0 +1,33 @@
+{
+  "bindings": [
+    {
+      "authLevel": "function",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "res"
+    },
+    {
+      "name": "buildingOutputBlob",
+      "direction": "out",
+      "type": "blob",
+      "path": "icms/building/{rand-guid}_{datetime:yyMMdd}.csv",
+      "connection": "fplsinut01datalakedlsa01_STORAGE"
+    },
+    {
+      "name": "orderOutputBlob",
+      "direction": "out",
+      "type": "blob",
+      "connection": "fplsinut01datalakedlsa01_STORAGE",
+      "path": "icms/orders/{rand-guid}_{datetime:yyMMdd}.csv"
+    }
+  ]
+}
